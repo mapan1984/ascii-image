@@ -1,0 +1,24 @@
+canvas {
+  display: block;
+  margin: 0px auto;
+}
+
+#ascii {
+    color: black;
+    background: white; 
+    display: inline-block;
+    white-space: pre;
+    letter-spacing: 0;
+    line-height: 1.4;
+    font-family: 'Consolas','BitstreamVeraSansMono','CourierNew',Courier,monospace;
+    font-size: 12px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgray;
+}
+
+pre {
+    transform-origin: top left;
+    transform: scale(0.5);
+}
