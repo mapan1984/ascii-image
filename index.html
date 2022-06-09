@@ -6,19 +6,29 @@
   <link rel="stylesheet" href="./style/main.css">
 </head>
 <body>
-  <div>
-    <input type="file" id="imageInput" accept="image/*">
-  </div>
+  <div class="grid container">
+    <div>
+      <div>
+        <input type="file" id="imageInput" accept="image/*">
+      </div>
+      <div>
+        <canvas id="canvas"></canvas>
+      </div>
+      <div>
+        <div>
+          <input type="checkbox" id="enableRGB" checked>
+          <label for="enableRGB">enable RGB</label>
+        </div>
+        <button type="button" id="render">Render</button>
+      </div>
+    </div>
 
-  <div>
-    <canvas id="canvas"></canvas>
-  </div>
-
-  <div>
-    <pre>
-      <code id="ascii">
-      </code>
-    </pre>
+    <div>
+      <pre>
+        <code id="ascii">
+        </code>
+      </pre>
+    </div>
   </div>
   <script type="module" src="./scripts/main.js"></script>
 </body>

@@ -24,10 +24,36 @@ const getColorIndicesForCoord = (x, y, width) => {
     return [red, red + 1, red + 2, red + 3];
 };
 
+// 根据 r, g, b 三值转换为 css color 格式(即 FFFFFF)
+function rgb(r, g, b) {
+    let acc = ''
+
+    for (let cur of [r, g, b]) {
+        let val
+
+        if (cur >= 255) {
+            val = 'ff'
+        } else if (cur <= 0) {
+            val = '00'
+        } else {
+            val = Number(cur).toString(16)
+        }
+
+        if (val.length === 1) {
+            val = '0' + val
+        }
+
+        acc += val
+    }
+
+    return acc.toUpperCase()
+}
+
 function imageData2HTML(
     imageData,
     imageHeight,
     imageWidth,
+    enableRGB = true,
     outputHeight = 100,
     outputWidth = 100
 ) {
@@ -60,7 +86,11 @@ function imageData2HTML(
 
             const c = getChar(r, g, b, a)
 
-            row += `<span>${c} </span>`
+            if (enableRGB) {
+                row += `<span style="color:#${rgb(r, g, b)}">${c}</span>`
+            } else {
+                row += `<span>${c}</span>`
+            }
         }
 
         content += `${row}<span>\n</span>`

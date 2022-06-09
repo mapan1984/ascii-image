@@ -1,6 +1,17 @@
+.container {
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 canvas {
-  display: block;
-  margin: 0px auto;
+    display: block;
+    margin: 0px;
 }
 
 #ascii {
@@ -9,16 +20,13 @@ canvas {
     display: inline-block;
     white-space: pre;
     letter-spacing: 0;
-    line-height: 1.4;
+
     font-family: 'Consolas','BitstreamVeraSansMono','CourierNew',Courier,monospace;
     font-size: 12px;
+    line-height: 0.6;
+    font-weight: bold;
 
     border-width: 1px;
     border-style: solid;
     border-color: lightgray;
-}
-
-pre {
-    transform-origin: top left;
-    transform: scale(0.5);
 }
